@@ -15,6 +15,7 @@ public interface UserService {
 
     void insertUser(User user);
 
-
     List<User> list();
+
+    User selectUserByName(String username);
 }

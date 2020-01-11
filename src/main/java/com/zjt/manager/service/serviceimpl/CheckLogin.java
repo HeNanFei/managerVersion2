@@ -34,7 +34,7 @@ public class CheckLogin implements UserDetailsService {
         logger.debug("users list length_________________"+users);
 
 
-            UserDetails userDetails = org.springframework.security.core.userdetails.User.withUsername(users.getUsername()).password(users.getPassword()).authorities("p1").build();
+            UserDetails userDetails = org.springframework.security.core.userdetails.User.withUsername(users.getUsername()).password(users.getPassword()).authorities("root").build();
 
 
         return userDetails;

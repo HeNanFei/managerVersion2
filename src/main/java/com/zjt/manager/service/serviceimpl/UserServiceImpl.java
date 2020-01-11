@@ -39,6 +39,15 @@ public class UserServiceImpl implements UserService{
         return userMapper.selectByExample(userExample);
     }
 
+    @Override
+    public User selectUserByName(String username) {
+
+        UserExample userExample = new UserExample();
+        UserExample.Criteria criteria = userExample.createCriteria();
+        criteria.andUsernameEqualTo(username);
+        System.out.println("根据用户名查询的用户长度"+userMapper.selectByExample(userExample).size());
+        return userMapper.selectByExample(userExample).get(0);
+    }
 
 
 }

@@ -38,13 +38,14 @@
             </div>
             <div class="layui-form-item">
                 <label class="layui-form-label">用户身份</label>
-                <div class="layui-input-block">
-                    <input type="checkbox" name="type" title="语文老师" value="语文老师">
-                    <input type="checkbox" name="type" title="数学老师" value="数学老师">
-                    <input type="checkbox" name="type" title="英语老师" value="英语老师">
-                    <input type="checkbox" name="type" title="化学老师" value="化学老师">
-                    <input type="checkbox" name="type" title="物理老师" value="物理老师">
-                    <input type="checkbox" name="type" title="生物老师" value="生物老师">
+                <div class="layui-input-block">:
+                    <input type="checkbox" name="type" title="超级管理员" value="7">
+                    <input type="checkbox" name="type" title="语文老师" value="1">
+                    <input type="checkbox" name="type" title="数学老师" value="2">
+                    <input type="checkbox" name="type" title="英语老师" value="3">
+                    <input type="checkbox" name="type" title="化学老师" value="4">
+                    <input type="checkbox" name="type" title="物理老师" value="5">
+                    <input type="checkbox" name="type" title="生物老师" value="6">
                 </div>
             </div>
 
@@ -120,6 +121,19 @@
 
         //监听提交
         form.on('submit(demo1)', function (data) {
+
+
+            var industryObj = $('input[name="type"]');
+            var check_val = [];
+            for(k in industryObj){
+                if(industryObj[k].checked){
+                    check_val.push(industryObj[k].value);
+                }
+            }
+
+            data.field.type = check_val;
+
+
             var user1 = JSON.stringify(data.field);
             layer.alert(JSON.stringify(data.field), {
                 title: '最终的提交信息'
@@ -127,7 +141,7 @@
 
 
           $.ajax({
-                url:'../../usr/add',
+                url:'../../user/add',
                 data:{user1:user1},
                 success:function (msg) {
                     layer.alert(msg);

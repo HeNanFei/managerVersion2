@@ -17,5 +17,10 @@ class ManagerApplicationTests {
 		BCrypt.checkpw("123",hashpw);
 
 	}
+	@Test
+	void test(){
+
+		//String string = "7","1";
+	}
 
 }

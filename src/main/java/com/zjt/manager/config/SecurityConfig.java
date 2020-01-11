@@ -43,7 +43,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.headers().frameOptions().disable();
         http.csrf().disable();
         // .antMatchers("/author/**").hasAuthority("p2").antMatchers("/pri/**").authenticated()
-        http.authorizeRequests().antMatchers("/test/**").authenticated().antMatchers("/test/**").hasAuthority("p1")
+        http.authorizeRequests().antMatchers("/user/**").authenticated().antMatchers("/user/**").hasAuthority("root")
                 .anyRequest().permitAll().and().formLogin().loginPage("/login2").loginProcessingUrl("/login/test")
                 .successForwardUrl("/success").and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.NEVER);
 
