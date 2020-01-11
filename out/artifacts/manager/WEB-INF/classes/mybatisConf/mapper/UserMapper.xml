@@ -12,6 +12,21 @@
     <result column="password" jdbcType="VARCHAR" property="password" />
     <result column="type" jdbcType="VARCHAR" property="type" />
   </resultMap>
+
+  <!--用户角色关系-->
+
+  <resultMap id="UroleResultMap" type="com.zjt.manager.pojo.User">
+    <result column="uid" jdbcType="INTEGER" property="uid" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="type" jdbcType="VARCHAR" property="type" />
+    <collection property="uroleList" ofType="com.zjt.manager.pojo.Urole">
+      <result column="uuid" property="uid" jdbcType="INTEGER" />
+      <result column="urid" property="roleid" jdbcType="INTEGER" />
+    </collection>
+
+  </resultMap>
+
   <sql id="Example_Where_Clause">
     <!--
       WARNING - @mbggenerated
@@ -225,6 +240,12 @@
 
   <select id="selectByLimit" resultType="com.zjt.manager.pojo.User" parameterType="java.lang.Integer">
     select * from user limit #{page},#{limit}
+  </select>
+
+  <select id="selectUserAndRoles" resultMap="UroleResultMap">
+     select u.uid,u.username,u.password,u.type,ur.roleid uuid
+      ,ur.uid urid
+       from user u inner join urole ur on u.uid = ur.uid;
   </select>
 
 </mapper>

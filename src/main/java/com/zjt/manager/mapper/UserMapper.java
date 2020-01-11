@@ -67,5 +67,7 @@ public interface UserMapper {
     User getUserByName(String username);
 
     List<User> selectByLimit(Integer page, Integer limit);
+
+    List<User> selectUserAndRoles();
 	
 }

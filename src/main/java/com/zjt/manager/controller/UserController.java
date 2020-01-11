@@ -37,21 +37,16 @@ public class UserController {
        User user2 = JSONObject.parseObject(user1, User.class);
        String type = user2.getType();
 
-
-
-
-       System.out.println("string type"+type.substring(1, type.length() - 1));
        String[] split = type.substring(1, type.length() - 1).split(",");
 
-       System.out.println("spilt"+ split.toString());
        //获取用户角色标识
       for(int i=0;i<split.length;i++){
           String strings = split[i];
           String subString = strings.substring(1,strings.length()-1);
 
-          //System.out.println("角色标识啊"+ Integer.valueOf(strings));
+
         int i2 = Integer.parseInt(subString);
-          System.out.println("转换后的角色标识"+i2);
+
           ridList.add(i2);
 
       }

@@ -1,5 +1,7 @@
 package com.zjt.manager.pojo;
 
+import java.util.List;
+
 public class User {
     private Integer uid;
 
@@ -8,6 +10,16 @@ public class User {
     private String password;
 
     private String type;
+
+    private List<Urole> uroleList;
+
+    public List<Urole> getUroleList() {
+        return uroleList;
+    }
+
+    public void setUroleList(List<Urole> uroleList) {
+        this.uroleList = uroleList;
+    }
 
     public Integer getUid() {
         return uid;
