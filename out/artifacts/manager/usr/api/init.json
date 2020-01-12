@@ -63,6 +63,47 @@
             }
           ]
         },
+        {
+          "title": "教师管理",
+          "href": "",
+          "icon": "fa fa-calendar",
+          "target": "_self",
+          "child": [
+            {
+              "title": "教师列表",
+              "href": "../usr/page/teacherList.html",
+              "icon": "fa fa-list-alt",
+              "target": "_self"
+            },
+            {
+              "title": "添加教师",
+              "href": "../usr/page/addTeacher.html",
+              "icon": "fa fa-navicon",
+              "target": "_self"
+            }
+          ]
+        },
+        {
+          "title": "班级管理",
+          "href": "",
+          "icon": "fa fa-calendar",
+          "target": "_self",
+          "child": [
+            {
+              "title": "班级列表",
+              "href": "../usr/page/courseLis.html",
+              "icon": "fa fa-list-alt",
+              "target": "_self"
+            },
+            {
+              "title": "添加班级",
+              "href": "../usr/page/addCours.html",
+              "icon": "fa fa-navicon",
+              "target": "_self"
+            }
+          ]
+        },
+
 
 
 

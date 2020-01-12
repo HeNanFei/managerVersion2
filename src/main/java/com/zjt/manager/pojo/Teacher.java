@@ -70,4 +70,17 @@ public class Teacher {
     public void setAddress(String address) {
         this.address = address == null ? null : address.trim();
     }
+
+    @Override
+    public String toString() {
+        return "Teacher{" +
+                "tid=" + tid +
+                ", tname='" + tname + '\'' +
+                ", tgender='" + tgender + '\'' +
+                ", college='" + college + '\'' +
+                ", tel='" + tel + '\'' +
+                ", type='" + type + '\'' +
+                ", address='" + address + '\'' +
+                '}';
+    }
 }
